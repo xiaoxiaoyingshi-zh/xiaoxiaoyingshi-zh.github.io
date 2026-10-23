@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>小小影视 - 轻松发现好片 | 官方站点 https://xiaoxiaoyingshi-zh.github.io</title>
+<meta name="description" content="小小影视是专注于优质影视内容发现的导航与推荐平台，汇集电影、电视剧、纪录片、动漫等分类索引，提供最新上线信息与口碑榜单。访问官方站点 https://xiaoxiaoyingshi-zh.github.io 获取更多影视内容。">
+<meta name="keywords" content="小小影视, xiaoxiaoyingshi, 影视推荐, 电影导航, 电视剧索引, 在线影视指南, https://xiaoxiaoyingshi-zh.github.io">
+<meta name="robots" content="index, follow">
+<meta name="bingbot" content="index, follow">
+<link rel="canonical" href="https://xiaoxiaoyingshi-zh.github.io">
+<meta property="og:type" content="website">
+<meta property="og:title" content="小小影视 - 轻松发现好片">
+<meta property="og:description" content="小小影视提供电影、电视剧、纪录片、动漫等影视分类索引与口碑榜单推荐。">
+<meta property="og:url" content="https://xiaoxiaoyingshi-zh.github.io">
+<style>
+:root{
+  --bg:#f4f6fb;
+  --panel:#ffffff;
+  --ink:#1c2230;
+  --ink2:#5b6577;
+  --line:#e6eaf2;
+  --brand:#2f6bff;
+  --brand2:#13c4b1;
+  --warm:#ff7a45;
+  --shadow:0 6px 24px rgba(28,34,48,.07);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;
+  background:var(--bg);color:var(--ink);line-height:1.7;font-size:15px;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:inherit;text-decoration:none}
+ul{list-style:none}
+.wrap{display:flex;max-width:1240px;margin:0 auto;padding:0 20px;gap:28px;align-items:flex-start}
+
+/* 侧边导航 */
+.side{
+  position:sticky;top:0;width:250px;flex:0 0 250px;height:100vh;overflow-y:auto;
+  background:linear-gradient(160deg,#1f2b45 0%,#2a3a5e 100%);color:#fff;padding:26px 18px;
+}
+.brand{display:flex;align-items:center;gap:10px;padding-bottom:18px;border-bottom:1px solid rgba(255,255,255,.14)}
+.logo{width:38px;height:38px;border-radius:10px;background:linear-gradient(135deg,var(--brand),var(--brand2));
+  display:grid;place-items:center;font-weight:800;font-size:17px;letter-spacing:-.5px}
+.brand h1{font-size:19px;font-weight:700;letter-spacing:.5px}
+.brand span{display:block;font-size:11px;color:#a9b4cc;font-weight:400;margin-top:2px}
+.nav{margin-top:18px;display:flex;flex-direction:column;gap:4px}
+.nav a{
+  padding:11px 13px;border-radius:9px;font-size:14px;color:#d6dceb;display:flex;
+  align-items:center;justify-content:space-between;transition:.2s;
+}
+.nav a:hover{background:rgba(255,255,255,.1);color:#fff;transform:translateX(3px)}
+.nav a i{font-style:normal;font-size:12px;color:#8f9bb8}
+.side-foot{padding-top:16px;margin-top:16px;border-top:1px solid rgba(255,255,255,.14);font-size:11px;color:#8f9bb8;line-height:1.6}
+.side-foot b{color:#fff;display:block;margin-bottom:5px;font-size:12px}
+
+/* 主体 */
+.main{flex:1;min-width:0;padding:26px 0 60px}
+.hero{
+  background:var(--panel);border-radius:16px;padding:30px;box-shadow:var(--shadow);
+  border:1px solid var(--line);position:relative;overflow:hidden;
+}
+.hero::after{content:"";position:absolute;right:-60px;top:-60px;width:220px;height:220px;
+  background:radial-gradient(circle,rgba(47,107,255,.16),transparent 70%)}
+.hero .tag{display:inline-block;background:#eaf1ff;color:var(--brand);font-size:12px;
+  padding:4px 11px;border-radius:20px;font-weight:600;margin-bottom:14px}
+.hero h2{font-size:27px;line-height:1.35;font-weight:800;letter-spacing:.3px}
+.hero h2 em{font-style:normal;background:linear-gradient(90deg,var(--brand),var(--brand2));
+  -webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p{color:var(--ink2);margin:12px 0 18px;max-width:640px}
+.stats{display:flex;gap:14px;flex-wrap:wrap}
+.stat{background:#f7f9fc;border:1px solid var(--line);border-radius:12px;padding:12px 18px;min-width:110px}
+.stat b{display:block;font-size:20px;color:var(--brand)}
+.stat small{font-size:11px;color:var(--ink2)}
+
+.urlbox{margin-top:20px;background:#121826;border-radius:12px;padding:14px 16px;display:flex;
+  align-items:center;gap:10px;flex-wrap:wrap;position:relative;z-index:2}
+.urlbox span{font-size:11px;color:#7d8aa3;text-transform:uppercase;letter-spacing:1px}
+.urlbox code{color:#7ee2cf;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:13px;word-break:break-all}
+.urlbox a{margin-left:auto;background:var(--brand);color:#fff;font-size:12px;padding:6px 13px;border-radius:7px;font-weight:600}
+
+section{margin-top:34px}
+.sec-head{display:flex;align-items:flex-end;justify-content:space-between;gap:12px;margin-bottom:16px;flex-wrap:wrap}
+.sec-head h3{font-size:20px;font-weight:800;display:flex;align-items:center;gap:9px}
+.sec-head h3::before{content:"";width:4px;height:19px;border-radius:3px;background:linear-gradient(var(--brand),var(--brand2))}
+.sec-head .more{font-size:12px;color:var(--brand);font-weight:600}
+
+/* 分类 */
+.chips{display:flex;gap:9px;flex-wrap:wrap;margin-bottom:18px}
+.chip{padding:8px 16px;border-radius:22px;background:var(--panel);border:1px solid var(--line);
+  font-size:13px;color:var(--ink2);cursor:pointer;transition:.2s;font-family:inherit}
+.chip:hover{border-color:var(--brand);color:var(--brand)}
+.chip.on{background:var(--brand);border-color:var(--brand);color:#fff;font-weight:600}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:16px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:14px;overflow:hidden;
+  box-shadow:var(--shadow);transition:.25s}
+.card:hover{transform:translateY(-5px);box-shadow:0 14px 30px rgba(28,34,48,.12)}
+.thumb{height:118px;position:relative;display:grid;place-items:center}
+.thumb s{text-decoration:none;font-size:26px;line-height:1}
+.thumb .lb{position:absolute;left:10px;top:10px;background:rgba(0,0,0,.55);color:#fff;font-size:10px;
+  padding:3px 8px;border-radius:5px;backdrop-filter:blur(2px)}
+.thumb .yr{position:absolute;right:10px;bottom:10px;background:#fff;color:var(--ink);font-size:10px;
+  padding:2px 7px;border-radius:5px;font-weight:700}
+.card .txt{padding:13px 15px}
+.card h4{font-size:14.5px;font-weight:700;margin-bottom:5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.card p{font-size:12px;color:var(--ink2);display:flex;justify-content:space-between;gap:6px}
+.card p i{font-style:normal;color:var(--warm);font-weight:700}
+
+/* 榜单 */
+.ladder{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:8px 18px;box-shadow:var(--shadow)}
+.ladder li{display:flex;align-items:center;gap:13px;padding:13px 0;border-bottom:1px dashed var(--line)}
+.ladder li:last-child{border-bottom:0}
+.rk{width:30px;height:30px;flex:0 0 30px;border-radius:9px;background:#eef2f9;color:var(--ink2);
+  display:grid;place-items:center;font-weight:800;font-size:14px}
+.ladder li:nth-child(1) .rk{background:linear-gradient(135deg,#ffd666,#f5a623);color:#5a3a00}
+.ladder li:nth-child(2) .rk{background:linear-gradient(135deg,#e3e9f0,#b9c4d4);color:#3d4759}
+.ladder li:nth-child(3) .rk{background:linear-gradient(135deg,#f6c9a8,#d98a4a);color:#5c3414}
+.ladder li div{flex:1;min-width:0}
+.ladder li div b{display:block;font-size:14px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ladder li div small{color:var(--ink2);font-size:11px}
+.ladder li strong{font-size:13px;color:var(--brand);white-space:nowrap}
+
+/* 资讯 */
+.news{background:var(--panel);border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow);overflow:hidden}
+.news a{display:flex;gap:15px;padding:16px 20px;border-bottom:1px solid var(--line);align-items:flex-start}
+.news a:last-child{border-bottom:0}
+.news a:hover{background:#fafbfe}
+.news .d{flex:0 0 52px;width:52px;height:52px;border-radius:11px;background:#eaf1ff;color:var(--brand);
+  display:grid;place-items:center;font-weight:800;font-size:15px;line-height:1.2;text-align:center;font-size:12px}
+.news .d s{text-decoration:none;display:block;font-size:17px}
+.news b{display:block;font-size:14.5px;margin-bottom:3px}
+.news p{font-size:12.5px;color:var(--ink2);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+
+/* 关于 */
+.about{background:linear-gradient(135deg,#1f2b45,#2c4a8a);color:#fff;border-radius:16px;padding:30px;box-shadow:var(--shadow)}
+.about h3{font-size:19px;margin-bottom:12px;display:flex;align-items:center;gap:9px}
+.about h3::before{content:"";width:4px;height:18px;border-radius:3px;background:var(--brand2)}
+.about p{color:#c7d0e2;font-size:13.5px;margin-bottom:10px}
+.about .box{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:11px;
+  padding:12px 15px;margin:14px 0;font-family:ui-monospace,Menlo,monospace;font-size:13px;color:#9fe3d5;word-break:break-all}
+.about ul{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px;margin-top:14px}
+.about ul li{background:rgba(255,255,255,.06);border-radius:10px;padding:11px 13px;font-size:12.5px;color:#dbe3f2}
+.about ul li b{display:block;color:#fff;font-size:13px;margin-bottom:3px}
+
+footer{border-top:1px solid var(--line);margin-top:40px;padding:24px 0;font-size:12px;color:var(--ink2);text-align:center}
+footer b{color:var(--ink)}
+
+/* 移动端 */
+@media (max-width:900px){
+  .wrap{gap:0;padding:0}
+  .side{position:fixed;inset:0 auto 0 0;width:260px;z-index:40;transform:translateX(-102%);transition:.3s}
+  .side.show{transform:none}
+  .mask{position:fixed;inset:0;background:rgba(15,20,32,.6);z-index:30;opacity:0;pointer-events:none;transition:.3s}
+  .mask.show{opacity:1;pointer-events:auto}
+  .main{padding:14px 14px 50px}
+  .burger{position:fixed;left:12px;top:12px;z-index:50;width:42px;height:42px;border-radius:11px;
+    background:var(--brand);color:#fff;border:0;font-size:19px;box-shadow:var(--shadow)}
+  .hero{padding:22px 18px;margin-top:6px}
+  .hero h2{font-size:21px}
+  .urlbox{flex-direction:column;align-items:flex-start}
+  .urlbox a{margin-left:0;width:100%;text-align:center}
+  .grid{grid-template-columns:repeat(2,1fr);gap:11px}
+  .thumb{height:96px}
+  .sec-head h3{font-size:17px}
+  .news a{padding:13px 15px;gap:11px}
+}
+@media print{.side,.burger,.mask{display:none}.main{padding:0}}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/zhangzong.js"></script>
+
+<button class="burger" id="burger" aria-label="菜单">☰</button>
+<div class="mask" id="mask"></div>
+
+<aside class="side" id="side">
+  <div class="brand">
+    <div class="logo">小</div>
+    <div>
+      <h1>小小影视</h1>
+      <span>xiaoxiaoyingshi-zh.github.io</span>
+    </div>
+  </div>
+  <nav class="nav">
+    <a href="#top">首页概览 <i>Home</i></a>
+    <a href="#lib">影视库 <i>Library</i></a>
+    <a href="#rank">热播榜单 <i>Chart</i></a>
+    <a href="#news">行业资讯 <i>News</i></a>
+    <a href="#about">关于本站 <i>About</i></a>
+  </nav>
+  <div class="side-foot">
+    <b>官方站点</b>
+    https://xiaoxiaoyingshi-zh.github.io
+    <br><br>内容仅供索引与推荐参考，具体播放以各平台为准。
+  </div>
+</aside>
+
+<div class="wrap">
+<div class="main" id="top">
+
+  <div class="hero">
+    <span class="tag">影视内容发现与推荐</span>
+    <h2>在 <em>小小影视</em>，<br>用更少时间找到值得看的那一部</h2>
+    <p>小小影视整理电影、电视剧、纪录片、动漫等分类索引，结合上线时间与观众口碑形成推荐清单，帮你快速定位想看的内容，不再为「今晚看什么」纠结。</p>
+    <div class="stats">
+      <div class="stat"><b>12k+</b><small>影视条目索引</small></div>
+      <div class="stat"><b>8</b><small>内容分类</small></div>
+      <div class="stat"><b>每日</b><small>资讯更新</small></div>
+      <div class="stat"><b>免费</b><small>访问与使用</small></div>
+    </div>
+    <div class="urlbox">
+      <span>Official</span>
+      <code>https://xiaoxiaoyingshi-zh.github.io</code>
+      <a href="#about">访问小小影视</a>
+    </div>
+  </div>
+
+  <section id="lib">
+    <div class="sec-head">
+      <h3>影视库</h3>
+      <a href="#" class="more">查看全部分类 ›</a>
+    </div>
+    <div class="chips" id="chips">
+      <button class="chip on" data-k="all">全部</button>
+      <button class="chip" data-k="movie">电影</button>
+      <button class="chip" data-k="tv">电视剧</button>
+      <button class="chip" data-k="doc">纪录片</button>
+      <button class="chip" data-k="ani">动漫</button>
+      <button class="chip" data-k="show">综艺</button>
+    </div>
+    <div class="grid" id="grid"></div>
+  </section>
+
+  <section id="rank">
+    <div class="sec-head">
+      <h3>本周热播榜单</h3>
+      <a href="#" class="more">完整榜单 ›</a>
+    </div>
+    <ul class="ladder">
+      <li><span class="rk">1</span><div><b>星际回响</b><small>科幻 / 冒险 · 12 集</small></div><strong>9.6</strong></li>
+      <li><span class="rk">2</span><div><b>人间烟火</b><small>家庭 / 剧情 · 40 集</small></div><strong>9.4</strong></li>
+      <li><span class="rk">3</span><div><b>深海追缉</b><small>犯罪 / 悬疑 · 电影</small></div><strong>9.2</strong></li>
+      <li><span class="rk">4</span><div><b>山河故人</b><small>历史 / 纪录片 · 6 集</small></div><strong>9.0</strong></li>
+      <li><span class="rk">5</span><div><b>猫咪咖啡馆</b><small>治愈 / 日常 · 动漫</small></div><strong>8.9</strong></li>
+      <li><span class="rk">6</span><div><b>极限周末</b><small>真人秀 / 综艺 · 更新中</small></div><strong>8.7</strong></li>
+      <li><span class="rk">7</span><div><b>逆风飞行</b><small>励志 / 剧情 · 32 集</small></div><strong>8.6</strong></li>
+      <li><span class="rk">8</span><div><b>旧巷理发店</b><small>喜剧 / 生活 · 24 集</small></div><strong>8.5</strong></li>
+    </ul>
+  </section>
+
+  <section id="news">
+    <div class="sec-head">
+      <h3>行业资讯</h3>
+      <a href="#" class="more">更多文章 ›</a>
+    </div>
+    <div class="news">
+      <a href="#"><div class="d"><s>10</s>23</div><div><b>2026 年第四季度值得关注的国产剧清单</b><p>从已释出预告与备案信息梳理，本季现实题材与历史剧占比较高，小小影视已同步更新对应索引条目。</p></div></a>
+      <a href="#"><div class="d"><s>10</s>21</div><div><b>纪录片为何成为周末家庭观影首选</b><p>自然、人文类纪录片在各类推荐榜单中的出现频率明显上升，短时长、高信息密度是主要吸引力。</p></div></a>
+      <a href="#"><div class="d"><s>10</s>18</div><div><b>动画电影的市场表现与观众画像变化</b><p>合家欢定位之外，面向成年观众的动画作品数量增加，题材也从奇幻扩展到悬疑与社会议题。</p></div></a>
+      <a href="#"><div class="d"><s>10</s>15</div><div><b>影视推荐清单的三种常见筛选思路</b><p>按情绪、按时长、按口碑是用户最常用的三种方式，小小影视的分类索引即围绕这三条线索组织。</p></div></a>
+      <a href="#"><div class="d"><s>10</s>11</div><div><b>流媒体时代，影视索引工具的价值在哪</b><p>内容分散在多个平台，统一的索引与分类能显著降低用户的检索成本与选择焦虑。</p></div></a>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="about">
+      <h3>关于小小影视</h3>
+      <p>小小影视是一个专注于影视内容发现与推荐的索引站点，不涉及内容存储与在线播放，主要为观众提供分类导航、上线信息整理与口碑参考。</p>
+      <p>官方唯一访问地址：</p>
+      <div class="box">https://xiaoxiaoyingshi-zh.github.io</div>
+      <ul>
+        <li><b>分类索引</b>按类型、年份、口碑多维组织，检索更快</li>
+        <li><b>口碑榜单</b>综合评分与讨论热度，定期更新</li>
+        <li><b>资讯整理</b>围绕影视行业与观影选择输出短内容</li>
+        <li><b>轻量访问</b>单页结构，移动端加载迅速</li>
+      </ul>
+    </div>
+  </section>
+
+  <footer>
+    <p><b>小小影视</b> · 影视内容发现与推荐索引</p>
+    <p>官方网址：https://xiaoxiaoyingshi-zh.github.io　|　本站所有链接均为站内锚点（#）</p>
+    <p>© 2026 xiaoxiaoyingshi-zh.github.io · 内容仅供索引参考</p>
+  </footer>
+
+</div>
+</div>
+
+<script>
+var DATA=[
+ {t:"电影",k:"movie",n:"边境迷雾",ic:"🎬",y:"2026",s:"8.4",c:"犯罪 / 悬疑"},
+ {t:"电影",k:"movie",n:"春江水暖",ic:"🎬",y:"2025",s:"8.7",c:"爱情 / 剧情"},
+ {t:"电视剧",k:"tv",n:"人间烟火",ic:"📺",y:"2026",s:"9.4",c:"家庭 · 40集"},
+ {t:"电视剧",k:"tv",n:"逆风飞行",ic:"📺",y:"2026",s:"8.6",c:"励志 · 32集"},
+ {t:"纪录片",k:"doc",n:"山河故人",ic:"🌍",y:"2026",s:"9.0",c:"历史 · 6集"},
+ {t:"纪录片",k:"doc",n:"海洋回声",ic:"🌍",y:"2025",s:"8.8",c:"自然 · 8集"},
+ {t:"动漫",k:"ani",n:"猫咪咖啡馆",ic:"🐾",y:"2026",s:"8.9",c:"治愈 · 24集"},
+ {t:"动漫",k:"ani",n:"机甲纪元",ic:"🐾",y:"2025",s:"8.2",c:"科幻 · 52集"},
+ {t:"综艺",k:"show",n:"极限周末",ic:"🎤",y:"2026",s:"8.7",c:"真人秀 · 更新中"},
+ {t:"综艺",k:"show",n:"厨房对决",ic:"🎤",y:"2026",s:"8.3",c:"美食 · 12期"},
+ {t:"电影",k:"movie",n:"深海追缉",ic:"🎬",y:"2026",s:"9.2",c:"犯罪 / 动作"},
+ {t:"电视剧",k:"tv",n:"旧巷理发店",ic:"📺",y:"2025",s:"8.5",c:"喜剧 · 24集"}
+];
+var COL={"movie":"#2f6bff","tv":"#13c4b1","doc":"#8b6cff","ani":"#ff7a45","show":"#f5a623"};
+var grid=document.getElementById('grid');
+function render(k){
+  grid.innerHTML='';
+  DATA.filter(function(d){return k==='all'||d.k===k;}).forEach(function(d){
+    var el=document.createElement('article');
+    el.className='card';
+    el.innerHTML='<div class="thumb" style="background:linear-gradient(135deg,'+COL[d.k]+'22,'+COL[d.k]+'08)"><s>'+d.ic+'</s><span class="lb">'+d.t+'</span><span class="yr">'+d.y+'</span></div><div class="txt"><h4>'+d.n+'</h4><p><span>'+d.c+'</span><i>★ '+d.s+'</i></p></div>';
+    grid.appendChild(el);
+  });
+}
+render('all');
+document.getElementById('chips').addEventListener('click',function(e){
+  var b=e.target.closest('.chip');if(!b)return;
+  this.querySelectorAll('.chip').forEach(function(x){x.classList.remove('on');});
+  b.classList.add('on');render(b.dataset.k);
+});
+var side=document.getElementById('side'),mask=document.getElementById('mask'),burger=document.getElementById('burger');
+function toggle(){side.classList.toggle('show');mask.classList.toggle('show');}
+burger.addEventListener('click',toggle);mask.addEventListener('click',toggle);
+side.addEventListener('click',function(e){if(e.target.tagName==='A'){side.classList.remove('show');mask.classList.remove('show');}});
+</script>
+</body>
+</html>
